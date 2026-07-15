@@ -36,6 +36,10 @@ public class Result<T> {
         return new Result<>(200, message, data, now());
     }
 
+    public static Result<Void> okMsg(String message) {
+        return new Result<>(200, message, null, now());
+    }
+
     public static <T> Result<T> fail(String message) {
         return new Result<>(400, message, null, now());
     }

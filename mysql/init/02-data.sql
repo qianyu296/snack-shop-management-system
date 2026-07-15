@@ -16,7 +16,7 @@ INSERT INTO sys_role (role_code, role_name, description) VALUES
 -- ============================================
 -- BCrypt 加密的 "admin123"
 INSERT INTO sys_user (username, password, real_name, phone, status) VALUES
-('admin', '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iAt6Z5Eh', '系统管理员', '13800000000', 'ENABLED');
+('admin', '$2b$12$NdJh1Kzx3HakjM6tIWcx4ejx3YZtp9p7gBYblnZqEac7OJNiMGRwi', '系统管理员', '13800000000', 'ENABLED');
 
 -- 关联管理员角色
 INSERT INTO sys_user_role (user_id, role_id)

@@ -21,9 +21,6 @@ public class JacksonConfig {
     @Bean
     public Jackson2ObjectMapperBuilderCustomizer jackson2ObjectMapperBuilderCustomizer() {
         return builder -> {
-            // Long -> String (防止JS精度丢失)
-            builder.serializerByType(Long.class, ToStringSerializer.instance);
-            builder.serializerByType(Long.TYPE, ToStringSerializer.instance);
             // LocalDateTime 格式化
             JavaTimeModule module = new JavaTimeModule();
             module.addSerializer(LocalDateTime.class,

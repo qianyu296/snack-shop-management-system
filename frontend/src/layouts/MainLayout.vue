@@ -17,20 +17,20 @@
       >
         <template v-for="item in menuItems" :key="item.path">
           <!-- 无子菜单 -->
-          <el-menu-item v-if="!item.children" :index="item.path">
+          <el-menu-item v-if="!item.children" :index="'/' + item.path">
             <el-icon><component :is="item.meta.icon" /></el-icon>
             <template #title>{{ item.meta.title }}</template>
           </el-menu-item>
           <!-- 有子菜单 -->
-          <el-sub-menu v-else :index="item.path">
+          <el-sub-menu v-else :index="'/' + item.path">
             <template #title>
               <el-icon><component :is="item.meta.icon" /></el-icon>
               <span>{{ item.meta.title }}</span>
             </template>
             <el-menu-item
-              v-for="child in item.children"
+              v-for="child in item.children.filter(c => !c.meta.hidden)"
               :key="child.path"
-              :index="child.path"
+              :index="'/' + item.path + '/' + child.path"
             >
               {{ child.meta.title }}
             </el-menu-item>

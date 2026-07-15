@@ -49,7 +49,7 @@ public class SecurityConfig {
                 // 静态资源
                 .requestMatchers("/uploads/**").permitAll()
                 // 管理员专属
-                .requestMatchers("/api/users/*/audit", "/api/users/audit/**").hasRole("ADMIN")
+                .requestMatchers("/api/users/**").hasRole("ADMIN")
                 .requestMatchers("/api/system/**").hasRole("ADMIN")
                 // 其余需要认证
                 .anyRequest().authenticated()
