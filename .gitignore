@@ -1,0 +1,30 @@
+# ========== General ==========
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# ========== Backend ==========
+backend/target/
+backend/*.jar
+backend/.mvn/
+backend/mvnw*
+!backend/.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# Uploads
+uploads/
+
+# ========== Frontend ==========
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# ========== Docker ==========
+mysql/data/
